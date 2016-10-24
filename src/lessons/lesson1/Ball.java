@@ -1,43 +1,34 @@
 package lessons.lesson1;
 
 import java.awt.*;
+import java.util.Random;
 
 class Ball extends Sprite {
 
-    private float vx;
-    private float vy;
     private Color color = new Color((int)(Math.random() * 255f), (int)(Math.random() * 255f), (int)(Math.random() * 255f));
+    private Random random = new Random();
 
-    Ball(GameCanvas gameCanvas) {
-        super(gameCanvas);
+    Ball(float x, float y) {
+
+        this();
+        this.x = x;
+        this.y = y;
+
+    }
+
+    Ball() {
+
         halfHeight = 20 + (float)(Math.random() * 50f);
         //noinspection SuspiciousNameCombination
         halfWidth = halfHeight;
+        vy = 150 + (float)(Math.random() * 200f) * ((float) random.nextInt(2) - 1);
+        vx = 150 + (float)(Math.random() * 200f) * ((float) random.nextInt(2) - 1);
     }
 
     @Override
     public void update(float deltaTime) {
         x += vx * deltaTime;
         y += vy * deltaTime;
-        if(getLeft() < gameCanvas.getLeft()){
-            setLeft(gameCanvas.getLeft());
-            vx = -vx;
-        }
-
-        if(getRight() > gameCanvas.getRight()){
-            setRight(gameCanvas.getRight());
-            vx = -vx;
-        }
-
-        if(getTop() < gameCanvas.getTop()){
-            setTop(gameCanvas.getTop());
-            vy = -vy;
-        }
-
-        if(getBottom() > gameCanvas.getBottom()){
-            setBottom(gameCanvas.getBottom());
-            vy = -vy;
-        }
     }
 
     @Override
