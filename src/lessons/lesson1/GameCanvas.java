@@ -11,7 +11,7 @@ class GameCanvas extends JPanel {
     private long lastFrameTime;
     private final ArrayList<Sprite> sprites = new ArrayList<>();
 
-    GameCanvas(){
+    GameCanvas() {
         lastFrameTime = System.nanoTime();
         this.addMouseListener(new CustomMouseListener());
         this.add(new Ball());
