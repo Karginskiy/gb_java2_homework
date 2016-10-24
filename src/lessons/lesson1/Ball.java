@@ -9,15 +9,12 @@ class Ball extends Sprite {
     private Random random = new Random();
 
     Ball(float x, float y) {
-
         this();
         this.x = x;
         this.y = y;
-
     }
 
     Ball() {
-
         halfHeight = 20 + (float)(Math.random() * 50f);
         //noinspection SuspiciousNameCombination
         halfWidth = halfHeight;
