@@ -42,10 +42,12 @@ public class PhoneBook {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
+        builder.append("======================= \n");
         builder.append(
                 String.format("PhoneBook with %d name%s. \n",
                 map.size(),
                 (map.size() == 1) ? "" : "s"));
+        builder.append("======================= \n");
         builder.append("  Sorted alphabetically. \n\n");
         for (Map.Entry<String, ArrayList<PhoneRecord>> entry : map.entrySet()) {
             builder.append(
