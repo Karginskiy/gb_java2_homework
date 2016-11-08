@@ -1,5 +1,7 @@
 package lessons.lesson3;
 
+import java.util.ArrayList;
+
 public class MainClass {
 
     public static void main(String[] args) {
@@ -10,6 +12,12 @@ public class MainClass {
         book.addRecord("Osvald", "+1-255-900-20-20", "leeharvey@killer.com");
         book.addRecord("Osvald", "+1-555-901-21-21", "harvey@deadboy.com");
         book.addRecord("Osvald", "+1-222-911-51-91", "shot@president.org");
+
+        book.getEmailsByName("Kargin");
+        book.getEmailsByName("Osvald");
+
+        book.getPhonesByName("Zinoviev");
+        book.getPhonesByName("Kargin");
 
         System.out.println(book);
     }
