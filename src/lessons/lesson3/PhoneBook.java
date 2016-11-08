@@ -23,8 +23,20 @@ public class PhoneBook {
         }
     }
 
-    public ArrayList<PhoneRecord> getRecordsByName(String name) {
-        return map.get(name);
+    public void getPhonesByName(String name) {
+        System.out.println(name + "'s phones: ");
+        for (PhoneRecord record : map.get(name)) {
+            System.out.println("\t" + record.getNumbers());
+        }
+        System.out.println();
+    }
+
+    public void getEmailsByName(String name) {
+        System.out.println(name + "'s emails: ");
+        for (PhoneRecord record: map.get(name)) {
+            System.out.println("\t" + record.getEmail());
+        }
+        System.out.println();
     }
 
     @Override
